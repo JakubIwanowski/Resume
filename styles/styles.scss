@@ -1,0 +1,145 @@
+@use "reset";
+@import url(https://fonts.bunny.net/css?family=abril-fatface:400|jost:400|mallanna:400|quicksand:500);
+:root {
+  --bg: #fd7700;
+  --primary-color: #141542;
+  --secondary-color: yellow;
+  --container-width: 55rem;
+  --step--2: clamp(0.78rem, calc(0.78rem + 0.02vw), 0.8rem);
+  --step--1: clamp(0.94rem, calc(0.93rem + 0.06vw), 1rem);
+  --step-0: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.31rem + 0.21vw), 1.56rem);
+  --step-2: clamp(1.62rem, calc(1.55rem + 0.33vw), 1.95rem);
+  --step-3: clamp(1.94rem, calc(1.84rem + 0.5vw), 2.44rem);
+  --step-4: clamp(2.33rem, calc(2.19rem + 0.72vw), 3.05rem);
+  --step-5: clamp(2.8rem, calc(2.6rem + 1.02vw), 3.82rem);
+}
+body {
+  background-color: var(--bg);
+  color: var(--primary-color);
+  font-family: "Jost", display;
+  line-height: 1.7;
+}
+main {
+  padding: 50px 0;
+}
+h1 {
+  font-family: "Abril Fatface", display;
+  font-size: var(--step-5);
+  font-weight: 400;
+}
+h2 {
+  font-size: var(--step-4);
+}
+h3 {
+  font-size: var(--step-3);
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p,
+ul {
+  font-size: var(--step-0);
+}
+ul {
+  list-style-type: square;
+  padding-inline-start: 1em;
+}
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 clamp(0px, var(--container-width) - 100vw + 40px, 20px);
+}
+.flow > * + * {
+  margin-block-start: var(--spacing, 1em);
+}
+:is(h1, h2, h3, blockquote) {
+  --spacing: 1.5em;
+}
+
+:is(h1, h2, h3) + * {
+  --spacing: 0.5em;
+}
+:is(h1, h2, h3) + time {
+  --spacing: 0.2em;
+}
+title {
+  display: flex;
+  align-items: baseline;
+}
+small {
+  font-size: 0.5em;
+}
+.description {
+  margin-block-start: 4em;
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.group {
+  --gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding-block-start: 20px;
+  &__heading {
+    width: min(var(--container-width) * 0.35 - var(--gap), 100vw);
+  }
+  &__content {
+    width: min(var(--container-width) * 0.65, 100vw);
+    display: grid;
+    gap: 2rem;
+  }
+  &__time {
+    font-style: italic;
+    display: block;
+  }
+  &__relation {
+    display: block;
+    font-weight: bold;
+  }
+}
+.skills {
+  columns: auto min(100vw, var(--container-width) / 8);
+}
+.mail {
+  .at {
+    display: inline-block;
+  }
+  &:hover {
+    .at {
+      animation: hang 3s ease-in-out forwards;
+    }
+  }
+}
+@keyframes hang {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  60% {
+    transform: rotate(40deg);
+  }
+  70% {
+    transform: rotate(55deg);
+  }
+  80% {
+    transform: rotate(45deg);
+  }
+  90% {
+    transform: rotate(52deg);
+  }
+  100% {
+    transform: rotate(50deg);
+  }
+}
+@import "print";

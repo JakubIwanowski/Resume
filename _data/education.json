@@ -1,0 +1,20 @@
+[
+  {
+    "course": "English studies",
+    "degree": "Master's degree",
+    "date": "10/2012-02/2016",
+    "university": "University of Warsaw"
+  },
+  {
+    "course": "English studies",
+    "degree": "Bachelor's degree",
+    "date": "10/2009-06/2012",
+    "university": "University of Warsaw"
+  },
+  {
+    "course": "Political science",
+    "degree": "Bachelor's degree",
+    "date": "10/2007-07/2010",
+    "university": "University of Warsaw"
+  }
+]

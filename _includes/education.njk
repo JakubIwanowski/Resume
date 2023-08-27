@@ -1,0 +1,23 @@
+
+<section class="group">
+<h2 class="group__heading">
+Education
+</h2>
+<div class="group__content">
+      {%- for school in education -%}
+
+      <article class="flow">
+        <h3>
+        {{school.course}}
+        </h3>
+        <div>
+        <time class="group__time">{{school.date}}</time>
+        <span>{{school.degree}}</span>
+        <span class="group__relation">
+        at {{school.university}}
+        </span>
+        </div>
+      </article>
+      {%- endfor -%}
+      </div>
+      </section>

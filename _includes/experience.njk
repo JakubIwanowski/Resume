@@ -1,0 +1,23 @@
+<section class="group">
+<h2 class="group__heading">
+Experience
+</h2>
+<div class="group__content">
+      {%- for exp in experience -%}
+
+      <article class="flow">
+        <h3>
+        {{exp.job}}
+        </h3>
+        <time class="group__time">{{exp.date}}</time>
+        <span class="group__relation">
+        at {{exp.company}}
+        </span>
+      <p>
+{{exp.description}}
+      </p>
+      </article>
+      {%- endfor -%}
+      </div>
+        
+      </section>

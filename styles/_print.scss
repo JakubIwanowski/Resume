@@ -1,0 +1,35 @@
+@media print {
+  :root {
+    --primary-color: #000;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 25px;
+    text-decoration: underline;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
+  .description {
+    margin-block-start: 1em;
+  }
+  .flow > * + * {
+    margin-block-start: 1em;
+  }
+  .group {
+    display: block;
+    width: 100%;
+    &__content {
+      margin-block-start: 1em;
+      width: 100%;
+    }
+  }
+  @page {
+    body {
+      margin: 10mm;
+    }
+  }
+}
