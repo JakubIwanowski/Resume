@@ -5,6 +5,12 @@
   --primary-color: #141542;
   --secondary-color: yellow;
   --container-width: 55rem;
+  --btn-bg: #ff1800;
+  --btn-txt: #000000;
+  --outline-color: #3d1e62;
+  --color-printer: #000000;
+  --color-printer-contrast: #ffffff;
+  --printer-light-printing: #0bff26;
   --step--2: clamp(0.78rem, calc(0.78rem + 0.02vw), 0.8rem);
   --step--1: clamp(0.94rem, calc(0.93rem + 0.06vw), 1rem);
   --step-0: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
@@ -109,37 +115,95 @@ small {
 .skills {
   columns: auto min(100vw, var(--container-width) / 8);
 }
-.mail {
-  .at {
-    display: inline-block;
-  }
+.print-btn {
+  appearance: none;
+  margin: 1em auto 0;
+  font-size: var(--step-0);
+  padding: 5px 10px;
+  border: 2px solid var(--btn-txt);
+  border-radius: 10px;
+  color: var(--btn-txt);
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5em;
+  background-color: var(--btn-bg);
+  cursor: pointer;
   &:hover {
-    .at {
-      animation: hang 3s ease-in-out forwards;
+    .printer__paper--bottom,
+    .printer__paper--top {
+      transform: translateX(-50%) translateY(0.5em);
+    }
+    .printer__light {
+      background-color: var(--printer-light-printing);
     }
   }
+  &:is(:focus, :active) {
+    outline: #3d1e62 solid;
+    outline-offset: 0.3em;
+  }
 }
-@keyframes hang {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(60deg);
-  }
-  60% {
-    transform: rotate(40deg);
-  }
-  70% {
-    transform: rotate(55deg);
-  }
-  80% {
-    transform: rotate(45deg);
-  }
-  90% {
-    transform: rotate(52deg);
-  }
-  100% {
-    transform: rotate(50deg);
-  }
+.printer {
+  width: 2em;
+  height: 1em;
+  position: relative;
+}
+.printer__body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-printer);
+  border-radius: 5px;
+  z-index: 2;
+}
+.printer__light {
+  border-radius: 100px;
+  width: 0.1em;
+  height: 0.1em;
+  background-color: var(--color-printer-contrast);
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+  z-index: 2;
+  transition: all 0.5s linear;
+}
+.printer__paper--bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.3em;
+  background-color: var(--color-printer-contrast);
+  width: 50%;
+  height: 85%;
+  border-radius: 2px;
+  border: 0.1em solid var(--color-printer);
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: flex-start;
+  justify-items: center;
+}
+.printer__txt {
+  width: 80%;
+  height: 35%;
+  background-color: var(--color-printer);
+  border-radius: 2px;
+}
+.printer__paper--top {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -0.7em;
+  background-color: var(--color-printer-contrast);
+  width: 50%;
+  height: 85%;
+  border-radius: 2px;
+  border: 0.1em solid var(--color-printer);
+  z-index: 1;
+}
+.printer__paper--top,
+.printer__paper--bottom {
+  transition: all 0.8s cubic-bezier(1, 0.72, 0.26, 0.03);
 }
 @import "print";

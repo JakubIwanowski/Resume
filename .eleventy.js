@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   // Recognize Sass as a "template languages"
   eleventyConfig.addTemplateFormats("scss");
-
+  eleventyConfig.addPassthroughCopy("js");
   // Compile Sass
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css",
