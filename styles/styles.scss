@@ -1,5 +1,18 @@
 @use "reset";
-@import url(https://fonts.bunny.net/css?family=abril-fatface:400|jost:400|mallanna:400|quicksand:500);
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("/fonts/abrilfatface-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/jost-400-book.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --bg: #fd7700;
   --primary-color: #141542;
@@ -23,14 +36,14 @@
 body {
   background-color: var(--bg);
   color: var(--primary-color);
-  font-family: "Jost", display;
+  font-family: "Jost", sans-serif;
   line-height: 1.7;
 }
 main {
   padding: 50px 0;
 }
 h1 {
-  font-family: "Abril Fatface", display;
+  font-family: "Abril Fatface", serif;
   font-size: var(--step-5);
   font-weight: 400;
 }

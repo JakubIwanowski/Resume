@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   // Recognize Sass as a "template languages"
   eleventyConfig.addTemplateFormats("scss");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("fonts");
   // Compile Sass
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css",
@@ -20,6 +21,7 @@ module.exports = function (eleventyConfig) {
       let result = sass.compileString(inputContent, {
         loadPaths: [parsed.dir || "."],
         sourceMap: false, // or true, your choice!
+        style: "compressed",
       });
 
       // Allow included files from @use or @import to
