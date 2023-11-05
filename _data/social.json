@@ -1,0 +1,25 @@
+[
+  {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/jakub-iwanowski/",
+    "icon": "/img/linkedin-logo.webp",
+    "iconPrint": "/img/linkedin-logo_print.webp"
+  },
+  {
+    "label": "GiHub",
+    "url": "https://github.com/JakubIwanowski/",
+    "icon": "/img/github-mark-white.svg",
+    "iconPrint": "/img/github-mark.svg"
+  },
+  {
+    "label": "Codeberg",
+    "url": "https://codeberg.org/dzajew/",
+    "icon": "/img/codeberg-logo_icon_white.svg",
+    "iconPrint": "/img/codeberg-logo_icon_blue.svg"
+  },
+  {
+    "label": "Website",
+    "url": "https://jakubiwanowski.dev",
+    "icon": "/img/favicon.png"
+  }
+]

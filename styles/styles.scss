@@ -54,6 +54,43 @@ ul {
   list-style-type: square;
   padding-inline-start: 1em;
 }
+a {
+  font-weight: bold;
+  color: var(--primary-color);
+  position: relative;
+  text-decoration: none;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0.2em;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transform: translateY(0.1em);
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      transform: translateY(0.3em);
+    }
+  }
+}
+header {
+  padding-block-start: 10px;
+}
+address {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: var(--step-0);
+  gap: 0.5em;
+}
+section {
+  padding-block-start: 20px;
+}
 .container {
   margin: 0 auto;
   max-width: var(--container-width);
@@ -72,29 +109,17 @@ ul {
 :is(h1, h2, h3) + time {
   --spacing: 0.2em;
 }
-title {
-  display: flex;
-  align-items: baseline;
-}
 small {
   font-size: 0.5em;
 }
 .description {
   margin-block-start: 4em;
 }
-.avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 .group {
   --gap: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
-  padding-block-start: 20px;
   &__heading {
     width: min(var(--container-width) * 0.35 - var(--gap), 100vw);
   }
@@ -115,11 +140,30 @@ small {
 .skills {
   columns: auto min(100vw, var(--container-width) / 8);
 }
+.social {
+  --spacing: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-block-end: 0.2em;
+    img {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
 .print-btn {
   appearance: none;
-  margin: 1em auto 0;
+  margin: 5em auto 0;
   font-size: var(--step-0);
-  padding: 5px 10px;
+  padding: 15px 10px;
   border: 2px solid var(--btn-txt);
   border-radius: 10px;
   color: var(--btn-txt);
@@ -130,6 +174,8 @@ small {
   background-color: var(--btn-bg);
   cursor: pointer;
   &:hover {
+    outline: var(--btn-txt) solid;
+    outline-offset: 0.3em;
     .printer__paper--bottom,
     .printer__paper--top {
       transform: translateX(-50%) translateY(0.5em);

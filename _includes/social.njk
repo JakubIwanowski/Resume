@@ -1,0 +1,21 @@
+<section class="flow">
+<h2>
+Where to find me
+</h2>
+      <div class="social">
+      {%- for socialInfo in social -%}
+        <a href="{{socialInfo.url}}" target="_blank" >
+        {%- if socialInfo.icon -%}
+          <picture>
+          {%- if socialInfo.iconPrint -%}
+          <source srcset="{{socialInfo.iconPrint}}" media="print" />
+          {%- endif -%}
+          <source srcset="{{socialInfo.icon}}" media="not print" />
+          <img src="{{socialInfo.icon}}" alt="{{socialInfo.label}}" loading="lazy" width="20" height="20">
+          </picture>
+        {%- endif -%}
+        <span>{{socialInfo.label}}</span>
+        </a>
+        {%- endfor -%}
+      </div>
+</section>

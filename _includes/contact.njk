@@ -1,5 +1,14 @@
-<section>
-{% if test %}
-{% endif %}
-div.
-</section>
+<header>
+<div class="container">
+<address >
+{%- for contactInfo in contact -%}
+<a href="{{contactInfo.url}}" >
+{%- if contactInfo.icon -%}
+<img src="{{contactInfo.icon}}" alt="{{contactInfo.label}}" loading="lazy" width="20" height="20">
+{%- endif -%}
+<span>{{contactInfo.label}}</span>
+</a>
+{%- endfor -%}
+</address>
+</div>
+</header>
